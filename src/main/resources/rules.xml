@@ -1,0 +1,12 @@
+<rules>
+    <rule>
+        <name>Add Index</name>
+        <match>SELECT * FROM ([a-zA-Z]+) WHERE ([a-zA-Z]+) = ([a-zA-Z]+);</match>
+        <suggestion>Consider adding an index on table $1 column $2 for better performance.</suggestion>
+    </rule>
+    <rule>
+        <name>Rewrite Query</name>
+        <match>SELECT ([a-zA-Z]+) FROM ([a-zA-Z]+) WHERE ([a-zA-Z]+) > ([0-9]+);</match>
+        <suggestion>Rewrite as: SELECT $1 FROM $2 WHERE $3 BETWEEN $4 AND 999;</suggestion>
+    </rule>
+</rules>
