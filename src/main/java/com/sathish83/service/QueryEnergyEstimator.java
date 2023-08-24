@@ -1,15 +1,18 @@
 package com.sathish83.service;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Service;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.stereotype.Service;
+
+import javax.sql.DataSource;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 
@@ -158,6 +161,21 @@ public class QueryEnergyEstimator {
         private String column1;
         private int column2;
 
+        public String getColumn1() {
+            return column1;
+        }
+
+        public void setColumn1(String column1) {
+            this.column1 = column1;
+        }
+
+        public int getColumn2() {
+            return column2;
+        }
+
+        public void setColumn2(int column2) {
+            this.column2 = column2;
+        }
         // Getter and setter methods
     }
 }
