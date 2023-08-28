@@ -36,7 +36,8 @@ public class DatabaseQuerySensor implements Sensor {
 
     @Override
     public void describe(SensorDescriptor sensorDescriptor) {
-
+        sensorDescriptor.onlyOnLanguage("java");
+        //sensorDescriptor.createIssuesForRuleRepositories(JavaRulesDefinition.REPOSITORY);
     }
 
     @Override
